@@ -110,6 +110,10 @@ async def on_message(message):
         
         update_countdown.start()
 
+    elif message.content.startswith("!help"):
+        embed = discord.Embed(title=f"Help:", description=f'!create_poll "Topic of poll" ; "Question of the poll?" ; "specify upto 5 options with comma separated values" ; "Time in minutes"', color=0x12ff51)
+        sent = await message.channel.send(embed=embed)
+
 
     @client.event
     async def on_raw_reaction_add(payload):
